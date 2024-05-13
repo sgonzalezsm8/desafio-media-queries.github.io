@@ -1,0 +1,90 @@
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 2fr 2fr 10fr;
+    grid-template-areas:
+        "nav"
+        "aside"
+        "main"
+        "footer";
+}
+
+/* Estilos para la barra de título */
+.title-bar {
+    background-color: #CDE8E5;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.title-bar h1 {
+    margin: 0;
+}
+
+nav {
+    grid-area: nav;
+    background: #EEF7FF;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: aside;
+    background-color: #7AB2B2;
+}
+
+footer {
+    grid-area: footer;
+    background: #4D869C;
+}
+
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: black;
+}
+
+section {
+    display: grid;
+    gap: 1rem;
+
+}
+
+.card img {
+    width: 66%;
+}
+
+@media screen and (min-width: 576px) {
+    body {
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 2fr 10fr 1fr;
+        grid-template-areas:
+            "nav nav"
+            "aside aside"
+            " main  main "
+            "footer footer";
+    }
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        grid-template-columns: 15% 85%;
+        grid-template-areas:
+            "nav aside "
+            "nav main "
+            "footer main ";
+    }
+
+    section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    nav ul li {
+        margin-top: 10px;
+    }
+}
